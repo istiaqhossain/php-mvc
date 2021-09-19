@@ -1,0 +1,15 @@
+{
+    "name": "istiaqhossain/php-mvc",
+    "authors": [
+        {
+            "name": "Istiaq Hossain",
+            "email": "md.istiaqhossain1990@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "app\\" : "./"
+        }
+    },
+    "require": {}
+}
