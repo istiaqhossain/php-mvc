@@ -10,4 +10,5 @@ use app\controllers\SiteController;
 
 $app = new Application(dirname(__DIR__));
 $app->router->get('/',[SiteController::class,'frontPage']);
+$app->router->post('/subscribe',[SiteController::class,'handleSubscriber']);
 $app->run();
