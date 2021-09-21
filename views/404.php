@@ -4,7 +4,7 @@
             <div class="col-md-6 offset-md-3">
                 <div class="text-white text-center">
                     <h1 class="display-1">Not Found</h1>
-                    <a href="/" class="btn btn-lg border-white bg-white">Back to Homepage</a>
+                    <a href="/" class="btn btn-lg border-white bg-white">Back to Home</a>
                 </div>
             </div>
         </div>

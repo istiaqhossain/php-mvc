@@ -18,6 +18,7 @@ class SiteController extends Controller
 
     public function handleSubscriber(Request $request)
     {
+        echo '<pre>';
         var_dump($request->getBody());
         exit;
     }
