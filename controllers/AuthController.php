@@ -9,6 +9,7 @@ class AuthController extends Controller
 {
     public function login()
     {
+        $this->setLayout('auth');
         $data = [
             'title' => 'PHP MVC',
             'content' => 'Minimalistic custom framework created for educational purposes.<br><b>NOT READY FOR PRODUCTION</b>'
@@ -27,6 +28,7 @@ class AuthController extends Controller
 
     public function register()
     {
+        $this->setLayout('auth');
         $data = [
             'title' => 'PHP MVC',
             'content' => 'Minimalistic custom framework created for educational purposes.<br><b>NOT READY FOR PRODUCTION</b>'
