@@ -8,45 +8,38 @@ use app\models\RegisterModel;
 
 class AuthController extends Controller
 {
-    public function login()
+    public function login(Request $request)
     {
         $this->setLayout('auth');
         $data = [
             'title' => 'PHP MVC',
             'content' => 'Minimalistic custom framework created for educational purposes.<br><b>NOT READY FOR PRODUCTION</b>'
         ];
-        return $this->render('auth/login', $data);
-    }
-
-    public function handleLogin(Request $request)
-    {
         if ($request->isPost()) {
             echo '<pre>';
             var_dump($request->getBody());
             exit;
         }
+        return $this->render('auth/login', $data);
     }
 
-    public function register()
+    public function register(Request $request)
     {
         $this->setLayout('auth');
+        $registerModel = new RegisterModel();
         $data = [
             'title' => 'PHP MVC',
-            'content' => 'Minimalistic custom framework created for educational purposes.<br><b>NOT READY FOR PRODUCTION</b>'
+            'content' => 'Minimalistic custom framework created for educational purposes.<br><b>NOT READY FOR PRODUCTION</b>',
+            'model' => $registerModel
         ];
-        return $this->render('auth/register', $data);
-    }
-
-    public function handleRegister(Request $request)
-    {
-        if (!$request->isPost()) {
-            return;
+        if ($request->isPost()) {
+            $registerModel->loadData($request->getBody());
+            var_dump($registerModel);
+            exit;
+            if ($registerModel->validate() && $registerModel->register()) {
+                return $this->render('auth/register', $data);
+            }
         }
-
-        $registerModel = new RegisterModel();
-        
-        echo '<pre>';
-        var_dump($request->getBody());
-        exit;
+        return $this->render('auth/register', $data);
     }
 }
