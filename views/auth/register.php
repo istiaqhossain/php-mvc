@@ -24,20 +24,21 @@
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-floating mb-4">
-                                <input name="email" type="email" class="form-control" id="email" placeholder="name@example.com">
-                                <label for="email">Email address</label>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-floating mb-4">
-                                <input name="password" type="password" class="form-control" id="password" placeholder="******">
-                                <label for="password">Password</label>
-                            </div>
-                        </div>
-                    </div>                                
+                    <div class="form-floating mb-4">
+                        <input name="email" type="email" class="form-control" id="email" placeholder="name@example.com">
+                        <label for="email">Email address</label>
+                    </div>
+
+                    <div class="form-floating mb-4">
+                        <input name="password" type="password" class="form-control" id="password" placeholder="******">
+                        <label for="password">Password</label>
+                    </div>
+                    
+                    <div class="form-floating mb-4">
+                        <input name="passwordConfirm" type="password" class="form-control" id="passwordConfirm" placeholder="******">
+                        <label for="passwordConfirm">Password Confirm</label>
+                    </div>
+                              
                     <button class="w-100 btn btn-lg btn-primary" type="submit">Register</button>
                 </form>
                 <div class="text-white text-center mt-4">
