@@ -4,7 +4,7 @@ namespace app\controllers;
 
 use app\core\Controller;
 use app\core\Request;
-use app\models\RegisterModel;
+use app\models\User;
 
 class AuthController extends Controller
 {
@@ -26,22 +26,22 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         $this->setLayout('auth');
-        $registerModel = new RegisterModel();
+        $user = new User();
         $data = [
             'title' => 'PHP MVC',
             'content' => 'Minimalistic custom framework created for educational purposes.<br><b>NOT READY FOR PRODUCTION</b>',
-            'model' => $registerModel
+            'model' => $user
         ];
         if ($request->isPost()) {
-            $registerModel->loadData($request->getBody());
+            $user->loadData($request->getBody());
 
-            if ($registerModel->validate() && $registerModel->register()) {
+            if ($user->validate() && $user->save()) {
                 return 'Success';
             }
             // echo '<pre>';
-            // var_dump($registerModel->errors);
+            // var_dump($user->errors);
             // exit;
-            if ($registerModel->validate() && $registerModel->register()) {
+            if ($user->validate() && $user->save()) {
                 return $this->render('auth/register', $data);
             }
         }
