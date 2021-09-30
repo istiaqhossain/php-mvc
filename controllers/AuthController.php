@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\core\Controller;
+use app\core\Application;
 use app\core\Request;
 use app\models\User;
 
@@ -36,14 +37,9 @@ class AuthController extends Controller
             $user->loadData($request->getBody());
 
             if ($user->validate() && $user->save()) {
-                return 'Success';
+                Application::$app->response->redirect('/');
             }
-            // echo '<pre>';
-            // var_dump($user->errors);
-            // exit;
-            if ($user->validate() && $user->save()) {
-                return $this->render('auth/register', $data);
-            }
+            return $this->render('auth/register', $data);    
         }
         return $this->render('auth/register', $data);
     }
