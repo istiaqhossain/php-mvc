@@ -14,6 +14,7 @@
     <title>PHP MVC</title>
   </head>
   <body class="bg-dark pt-5 pb-5">
+
     {{content}}
 
     <!-- Optional JavaScript; choose one of the two! -->

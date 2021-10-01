@@ -10,6 +10,14 @@
                     <a class="text-white" href="/register">Register</a>
                 </p>
             </div>
+
+            <?php if (\app\core\Application::$app->session->getFlash('success')): ?>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <?php echo \app\core\Application::$app->session->getFlash('success'); ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <?php endif; ?>
+
             <form action="/subscribe" method="post">
                 <p class="lead text-white text-center fw-bold">Subscribe now for updates</p>
                 
