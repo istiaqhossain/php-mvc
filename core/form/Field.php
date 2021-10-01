@@ -40,7 +40,7 @@ class Field
             $this->attribute, // id
             $this->attribute, // placeholder
             $this->attribute, // for
-            ucfirst($this->attribute), // label
+            $this->model->getLabel($this->attribute), // label
             $this->model->getFirstError($this->attribute) // error msg
         );
     }
