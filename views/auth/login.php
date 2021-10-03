@@ -5,29 +5,22 @@
                 <h1 class="display-1"><?php echo $title; ?></h1>
                 <p class="lead"><?php echo $content; ?></p>
             </div>
-            <form action="/login" method="post">
+            <?php 
+            $form = \app\core\form\Form::begin('', 'post');
+            ?>
                 <p class="lead text-white text-center fw-bold">Log in</p>
                 
                 <div class="row">
                     <div class="col">
-                        <div class="form-floating mb-4">
-                            <input name="email" type="email" class="form-control" id="email" placeholder="name@example.com">
-                            <label for="email">Email address</label>
-                        </div>
+                        <?php echo $form->field($model, 'email'); ?>
                     </div>
                     <div class="col">
-                        <div class="form-floating mb-4">
-                            <input name="password" type="password" class="form-control" id="password" placeholder="******">
-                            <label for="password">Password</label>
-                        </div>
+                        <?php echo $form->field($model, 'password')->passwordField(); ?>
                     </div>
                 </div>
                 
-
-                
-                
                 <button class="w-100 btn btn-lg btn-primary" type="submit">Log in</button>
-            </form>
+            <?php \app\core\form\Form::end();?>
             <div class="text-white text-center mt-4">
                 <p class="lead">
                     Not register yet? <a class="text-white" href="/register">Create an Account</a>
