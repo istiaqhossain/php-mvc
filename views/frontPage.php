@@ -4,11 +4,17 @@
             <div class="text-white text-center">
                 <h1 class="display-1"><?php echo $title; ?></h1>
                 <p class="lead"><?php echo $content; ?></p>
+                <?php if (\app\core\Application::isGuest()): ?>
                 <p class="lead">
                     <a class="text-white" href="/login">Log in</a>
                     /
                     <a class="text-white" href="/register">Register</a>
                 </p>
+                <?php else: ?>
+                <p class="lead">
+                    <a class="text-white" href="/logout">Welcome <?php echo \app\core\Application::$app->user->getDisplayName(); ?> (Logout)</a>
+                </p>
+                <?php endif; ?>
             </div>
 
             <?php if (\app\core\Application::$app->session->getFlash('success')): ?>
