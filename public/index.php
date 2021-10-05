@@ -22,6 +22,7 @@ $config = [
 ];
 
 $app = new Application(dirname(__DIR__), $config);
+$app->router->get('/profile',[AuthController::class,'profile']);
 $app->router->get('/login',[AuthController::class,'login']);
 $app->router->post('/login',[AuthController::class,'login']);
 $app->router->get('/register',[AuthController::class,'register']);

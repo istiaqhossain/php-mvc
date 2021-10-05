@@ -12,6 +12,8 @@
                 </p>
                 <?php else: ?>
                 <p class="lead">
+                    <a class="text-white" href="/profile">Profile</a>
+                    /
                     <a class="text-white" href="/logout">Welcome <?php echo \app\core\Application::$app->user->getDisplayName(); ?> (Logout)</a>
                 </p>
                 <?php endif; ?>
