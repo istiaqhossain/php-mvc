@@ -11,7 +11,7 @@
     <!-- Theme CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <title>PHP MVC Auth</title>
+    <title><?php echo $this->title; ?></title>
   </head>
   <body class="bg-dark pt-5 pb-5">
     {{content}}
