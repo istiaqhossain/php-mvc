@@ -32,31 +32,26 @@ $this->title = 'Home - PHP MVC';
             </div>
             <?php endif; ?>
 
-            <form action="/subscribe" method="post">
+            <?php 
+            $form = \app\core\form\Form::begin('', 'post');
+            ?>
                 <p class="lead text-white text-center fw-bold">Subscribe now for updates</p>
                 
                 <div class="row">
                     <div class="col">
-                        <div class="form-floating mb-4">
-                            <input name="firstname" type="text" class="form-control" id="firstname" placeholder="Jone Doe">
-                            <label for="firstname">Firstname</label>
-                        </div>
+                        <?php echo $form->field($model, 'firstname'); ?>
                     </div>
                     <div class="col">
-                        <div class="form-floating mb-4">
-                            <input name="lastname" type="text" class="form-control" id="lastname" placeholder="Jone Doe">
-                            <label for="lastname">Lastname</label>
-                        </div>
+                        <?php echo $form->field($model, 'lastname'); ?>
                     </div>
                 </div>
 
-                <div class="form-floating mb-4">
-                    <input name="email" type="email" class="form-control" id="email" placeholder="name@example.com">
-                    <label for="email">Email address</label>
-                </div>
+                <?php echo $form->field($model, 'email'); ?>
+                
+                <?php echo $form->textareaField($model, 'message'); ?>
                 
                 <button class="w-100 btn btn-lg btn-primary" type="submit">Subscribe</button>
-            </form>
+            <?php \app\core\form\Form::end();?>
         </div>
     </div>
 </div>

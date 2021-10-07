@@ -29,5 +29,5 @@ $app->router->get('/register',[AuthController::class,'register']);
 $app->router->post('/register',[AuthController::class,'register']);
 $app->router->get('/logout',[AuthController::class,'logout']);
 $app->router->get('/',[SiteController::class,'frontPage']);
-$app->router->post('/subscribe',[SiteController::class,'handleSubscriber']);
+$app->router->post('/',[SiteController::class,'frontPage']);
 $app->run();

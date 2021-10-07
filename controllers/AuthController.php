@@ -34,7 +34,6 @@ class AuthController extends Controller
                 $response->redirect('/');
                 return;
             }
-            return $this->render('auth/login', $data); 
         }
         return $this->render('auth/login', $data);
     }
@@ -56,7 +55,6 @@ class AuthController extends Controller
                 $response->redirect('/');
                 return;
             }
-            return $this->render('auth/register', $data);    
         }
         return $this->render('auth/register', $data);
     }
