@@ -1,5 +1,5 @@
 <?php
-use app\core\Application;
+use istiaqhossain\phpmvc\Application;
 
 class m0001_initial
 {

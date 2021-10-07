@@ -6,7 +6,7 @@
                 <p class="lead"><?php echo $content; ?></p>
             </div>
             <?php 
-            $form = \app\core\form\Form::begin('', 'post');
+            $form = \istiaqhossain\phpmvc\form\Form::begin('', 'post');
             ?>
                 <p class="lead text-white text-center fw-bold">Register</p>
 
@@ -46,7 +46,7 @@
                 <?php echo $form->field($model, 'confirmPassword')->passwordField(); ?>
                             
                 <button class="w-100 btn btn-lg btn-primary" type="submit">Register</button>
-            <?php \app\core\form\Form::end();?>
+            <?php \istiaqhossain\phpmvc\form\Form::end();?>
             <div class="text-white text-center mt-4">
                 <p class="lead">
                     Already have an account? <a class="text-white" href="/login">Log in</a>
